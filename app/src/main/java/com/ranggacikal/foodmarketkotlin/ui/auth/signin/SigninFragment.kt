@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.ranggacikal.foodmarketkotlin.MainActivity
 import com.ranggacikal.foodmarketkotlin.R
+import com.ranggacikal.foodmarketkotlin.TestActivity
 import com.ranggacikal.foodmarketkotlin.ui.auth.AuthActivity
 import kotlinx.android.synthetic.main.fragment_signin.*
 
@@ -27,6 +29,12 @@ class SigninFragment : Fragment() {
             val signup = Intent(activity, AuthActivity::class.java)
             signup.putExtra("page_request", 2)
             startActivity(signup)
+        }
+
+        btnSignin.setOnClickListener {
+            val home = Intent(activity, TestActivity::class.java)
+            startActivity(home)
+            activity?.finish()
         }
     }
 }
